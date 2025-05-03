@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/go-ble/ble"
 	"github.com/pkg/errors"
 	"github.com/urfave/cli"
+	"github.com/zlymeda/go-ble"
 )
 
 func doGetUUID(c *cli.Context) error {

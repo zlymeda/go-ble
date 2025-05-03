@@ -6,8 +6,8 @@ package darwin
 import (
 	"fmt"
 
-	"github.com/go-ble/ble"
 	"github.com/tinygo-org/cbgo"
+	"github.com/zlymeda/go-ble"
 )
 
 // A Client is a GATT client.

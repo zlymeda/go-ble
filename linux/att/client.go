@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/go-ble/ble"
 	"github.com/pkg/errors"
+	"github.com/zlymeda/go-ble"
 )
 
 // NotificationHandler handles notification or indication.

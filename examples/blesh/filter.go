@@ -3,8 +3,8 @@ package main
 import (
 	"strings"
 
-	"github.com/go-ble/ble"
 	"github.com/urfave/cli"
+	"github.com/zlymeda/go-ble"
 )
 
 func filter(c *cli.Context) ble.AdvFilter {

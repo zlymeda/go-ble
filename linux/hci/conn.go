@@ -8,10 +8,10 @@ import (
 	"io"
 	"net"
 
-	"github.com/go-ble/ble"
-	"github.com/go-ble/ble/linux/hci/cmd"
-	"github.com/go-ble/ble/linux/hci/evt"
 	"github.com/pkg/errors"
+	"github.com/zlymeda/go-ble"
+	"github.com/zlymeda/go-ble/linux/hci/cmd"
+	"github.com/zlymeda/go-ble/linux/hci/evt"
 )
 
 // Conn ...

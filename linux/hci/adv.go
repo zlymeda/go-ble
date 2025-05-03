@@ -3,9 +3,9 @@ package hci
 import (
 	"net"
 
-	"github.com/go-ble/ble"
-	"github.com/go-ble/ble/linux/adv"
-	"github.com/go-ble/ble/linux/hci/evt"
+	"github.com/zlymeda/go-ble"
+	"github.com/zlymeda/go-ble/linux/adv"
+	"github.com/zlymeda/go-ble/linux/hci/evt"
 )
 
 // RandomAddress is a Random Device Address.

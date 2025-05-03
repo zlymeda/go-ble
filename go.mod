@@ -1,4 +1,4 @@
-module github.com/go-ble/ble
+module github.com/zlymeda/go-ble
 
 go 1.13
 

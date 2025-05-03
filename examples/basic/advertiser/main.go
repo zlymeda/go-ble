@@ -7,9 +7,9 @@ import (
 	"log"
 	"time"
 
-	"github.com/go-ble/ble"
-	"github.com/go-ble/ble/examples/lib/dev"
 	"github.com/pkg/errors"
+	"github.com/zlymeda/go-ble"
+	"github.com/zlymeda/go-ble/examples/lib/dev"
 )
 
 var (

@@ -4,8 +4,8 @@
 package darwin
 
 import (
-	"github.com/go-ble/ble"
 	"github.com/raff/goble/xpc"
+	"github.com/zlymeda/go-ble"
 )
 
 type msg xpc.Dict

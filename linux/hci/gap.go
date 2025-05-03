@@ -7,10 +7,10 @@ import (
 	"net"
 	"time"
 
-	"github.com/go-ble/ble"
-	"github.com/go-ble/ble/linux/adv"
-	"github.com/go-ble/ble/linux/gatt"
 	"github.com/pkg/errors"
+	"github.com/zlymeda/go-ble"
+	"github.com/zlymeda/go-ble/linux/adv"
+	"github.com/zlymeda/go-ble/linux/gatt"
 )
 
 // Addr ...

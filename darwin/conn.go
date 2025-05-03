@@ -9,8 +9,8 @@ import (
 	"log"
 	"sync"
 
-	"github.com/go-ble/ble"
 	"github.com/tinygo-org/cbgo"
+	"github.com/zlymeda/go-ble"
 )
 
 // newGenConn creates a new generic (role-less) connection.  This should not be

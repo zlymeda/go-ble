@@ -5,7 +5,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/go-ble/ble"
+	"github.com/zlymeda/go-ble"
 )
 
 // NewCountChar ...

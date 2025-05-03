@@ -9,12 +9,12 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/go-ble/ble"
-	"github.com/go-ble/ble/examples/lib"
-	"github.com/go-ble/ble/examples/lib/dev"
-	"github.com/go-ble/ble/linux"
 	"github.com/pkg/errors"
 	"github.com/urfave/cli"
+	"github.com/zlymeda/go-ble"
+	"github.com/zlymeda/go-ble/examples/lib"
+	"github.com/zlymeda/go-ble/examples/lib/dev"
+	"github.com/zlymeda/go-ble/linux"
 )
 
 var curr struct {

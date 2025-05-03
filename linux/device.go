@@ -5,11 +5,11 @@ import (
 	"io"
 	"log"
 
-	"github.com/go-ble/ble"
-	"github.com/go-ble/ble/linux/att"
-	"github.com/go-ble/ble/linux/gatt"
-	"github.com/go-ble/ble/linux/hci"
 	"github.com/pkg/errors"
+	"github.com/zlymeda/go-ble"
+	"github.com/zlymeda/go-ble/linux/att"
+	"github.com/zlymeda/go-ble/linux/gatt"
+	"github.com/zlymeda/go-ble/linux/hci"
 )
 
 // NewDevice returns the default HCI device.

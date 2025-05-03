@@ -11,8 +11,8 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/go-ble/ble"
 	"github.com/tinygo-org/cbgo"
+	"github.com/zlymeda/go-ble"
 )
 
 type profCache struct {
