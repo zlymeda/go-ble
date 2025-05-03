@@ -1,3 +1,6 @@
+//go:build darwin
+// +build darwin
+
 package darwin
 
 // profcache: Profile Cache.  This allows a device to match profile objects

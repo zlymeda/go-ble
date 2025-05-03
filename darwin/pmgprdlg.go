@@ -3,6 +3,9 @@
 // implements a synchronous interface by translating these callbacks into
 // channel operations.
 
+//go:build darwin
+// +build darwin
+
 package darwin
 
 import (
