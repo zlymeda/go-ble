@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 
 	"github.com/zlymeda/go-ble"
 )
@@ -38,7 +39,7 @@ func explore(cln ble.Client, p *ble.Profile) error {
 }
 
 func propString(p ble.Property) string {
-	var s string
+	var s strings.Builder
 	for k, v := range map[ble.Property]string{
 		ble.CharBroadcast:   "B",
 		ble.CharRead:        "R",
@@ -50,8 +51,8 @@ func propString(p ble.Property) string {
 		ble.CharExtended:    "E",
 	} {
 		if p&k != 0 {
-			s += v
+			s.WriteString(v)
 		}
 	}
-	return s
+	return s.String()
 }

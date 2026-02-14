@@ -1,4 +1,4 @@
-// +build !mips
+//go:build !mips
 
 package socket
 

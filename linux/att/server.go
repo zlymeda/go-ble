@@ -370,13 +370,7 @@ func (s *Server) handleReadByTypeRequest(r ReadByTypeRequest) []byte {
 		}
 		if dlen == 0 {
 			// Found the first value.
-			dlen = 2 + len(v)
-			if dlen > 255 {
-				dlen = 255
-			}
-			if dlen > buf.Cap() {
-				dlen = buf.Cap()
-			}
+			dlen = min(min(2+len(v), 255), buf.Cap())
 			rsp.SetLength(uint8(dlen))
 		} else if 2+len(v) != dlen {
 			break
@@ -484,13 +478,7 @@ func (s *Server) handleReadByGroupRequest(r ReadByGroupTypeRequest) []byte {
 			v = buf2.Bytes()
 		}
 		if dlen == 0 {
-			dlen = 4 + len(v)
-			if dlen > 255 {
-				dlen = 255
-			}
-			if dlen > buf.Cap() {
-				dlen = buf.Cap()
-			}
+			dlen = min(min(4+len(v), 255), buf.Cap())
 			rsp.SetLength(uint8(dlen))
 		} else if 4+len(v) != dlen {
 			break

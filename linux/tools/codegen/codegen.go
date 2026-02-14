@@ -5,7 +5,7 @@ import (
 	"flag"
 	"fmt"
 	"io"
-	"io/ioutil"
+
 	"log"
 	"os"
 	"strings"
@@ -129,7 +129,7 @@ func input(s string) []byte {
 	if err != nil {
 		panic(err)
 	}
-	b, err := ioutil.ReadAll(fi)
+	b, err := io.ReadAll(fi)
 	if err != nil {
 		panic(err)
 	}

@@ -39,7 +39,7 @@ func (e LEAdvertisingReport) LengthData(i int) uint8 { return e[2+int(e.NumRepor
 
 func (e LEAdvertisingReport) Data(i int) []byte {
 	l := 0
-	for j := 0; j < i; j++ {
+	for j := range i {
 		l += int(e.LengthData(j))
 	}
 	b := e[2+int(e.NumReports())*9+l:]

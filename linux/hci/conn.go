@@ -150,10 +150,7 @@ func (c *Conn) Write(sdu []byte) (int, error) {
 		return 0, errors.Wrap(io.ErrShortWrite, "payload exceeds mtu")
 	}
 
-	plen := len(sdu)
-	if plen > c.txMTU {
-		plen = c.txMTU
-	}
+	plen := min(len(sdu), c.txMTU)
 	b := make([]byte, 4+plen)
 	binary.LittleEndian.PutUint16(b[0:2], uint16(len(sdu)))
 	binary.LittleEndian.PutUint16(b[2:4], cidLEAtt)
@@ -170,10 +167,7 @@ func (c *Conn) Write(sdu []byte) (int, error) {
 	sdu = sdu[plen:]
 
 	for len(sdu) > 0 {
-		plen := len(sdu)
-		if plen > c.txMTU {
-			plen = c.txMTU
-		}
+		plen := min(len(sdu), c.txMTU)
 		n, err := c.writePDU(sdu[:plen])
 		sent += n
 		if err != nil {
@@ -207,10 +201,9 @@ func (c *Conn) writePDU(pdu []byte) (int, error) {
 	for len(pdu) > 0 {
 		// Get a buffer from our pre-allocated and flow-controlled pool.
 		pkt := c.txBuffer.Get() // ACL pkt
-		flen := len(pdu)        // fragment length
-		if flen > pkt.Cap()-1-4 {
-			flen = pkt.Cap() - 1 - 4
-		}
+		flen := min(
+			// fragment length
+			len(pdu), pkt.Cap()-1-4)
 
 		// Prepare the Headers
 

@@ -40,6 +40,6 @@ func chkErr(err error) {
 	case context.Canceled:
 		fmt.Printf("canceled\n")
 	default:
-		log.Fatalf(err.Error())
+		log.Fatal(err.Error())
 	}
 }

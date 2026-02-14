@@ -150,7 +150,7 @@ func explore(cln ble.Client, p *ble.Profile) error {
 }
 
 func propString(p ble.Property) string {
-	var s string
+	var s strings.Builder
 	for k, v := range map[ble.Property]string{
 		ble.CharBroadcast:   "B",
 		ble.CharRead:        "R",
@@ -162,10 +162,10 @@ func propString(p ble.Property) string {
 		ble.CharExtended:    "E",
 	} {
 		if p&k != 0 {
-			s += v
+			s.WriteString(v)
 		}
 	}
-	return s
+	return s.String()
 }
 
 func chkErr(err error) {
@@ -176,6 +176,6 @@ func chkErr(err error) {
 	case context.Canceled:
 		fmt.Printf("canceled\n")
 	default:
-		log.Fatalf(err.Error())
+		log.Fatal(err.Error())
 	}
 }

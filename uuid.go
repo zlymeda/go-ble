@@ -87,7 +87,7 @@ func Reverse(u []byte) []byte {
 	l := len(u)
 	b := make([]byte, l)
 
-	for i := 0; i < l; i++ {
+	for i := range l {
 		b[l-i-1] = u[i]
 	}
 
